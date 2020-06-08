@@ -83,7 +83,7 @@ class NetworkCall {
         let tempRequest = weatherRequest(for: .currentWeather(q: cityName))
         
         let task = urlSession.dataTask(with: tempRequest) { data, response, error in
-            // Check for errors.
+    
             if let error = error {
                 return completion(Result.failure(error))
             }
@@ -105,7 +105,6 @@ class NetworkCall {
             
             let cityName = result.self
             
-            // Return the result with the completion handler.
             DispatchQueue.main.async {
                 completion(Result.success(cityName))
             }
